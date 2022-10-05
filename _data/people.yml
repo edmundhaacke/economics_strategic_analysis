@@ -1,0 +1,38 @@
+- name: Edmund Haacke
+  bio: >-
+    Joined the team in 2020. I do things.
+    My primary interests relate to programming (R, Python, C++, C, Objective-C, Rust), 
+    econometric modelling, applying economic theory to healthcare and data science methods.
+  email: edmund.haacke@nhs.net
+  github: edmundhaacke
+  role: Economic Analyst
+  profession: Economics
+  linkedin: edmundhaacke
+  twitter: edmundhaacke
+  active: 1
+
+- name: Someone Else
+  bio: these are some words
+  email: email.email@email.com
+  github: email
+  role: a role
+  active: 1
+
+- name: Left person
+  bio: more biograph words
+  email: eml@nshfsdkl.com
+  github: edmundhahaacke
+  role: the ecnomist
+  active: 1
+
+- name: person 3
+  bio: hello 
+  email: email@email.email
+  github: email
+  role: economist
+  active: 1
+
+- name: Someone who left
+  role: economist
+  profession: economics
+  active: 0

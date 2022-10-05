@@ -1,0 +1,87 @@
+---
+layout: default
+---
+<div class="container">
+    <h1 class="display-6">Current Team</h1>
+        <div class="row row-cols-auto gx-5 gy-2">
+            {% for person in site.data.people %}
+                {% if person.active == 0 %}
+                    {% break %}
+                {% endif %}
+                <div class="col-10 offset-1 col-lg-3 offset-lg-0 col-md-6 offset-md-0 col-sm-6 offset-sm-0 col-sm-offset-5 px-2 d-block">
+                    <div class="card border border-2 px-2 py-2 shadow p-3 mb-5">
+                        <img src="{% if person.img %} {{person.img | relative_url }} {% else %} {{'assets/img/people/anon.jpg' | relative_url }} {% endif %}" class="card-img-top">
+                        <div class="card-block">
+                            <h5 class="card-title">{{person.name}}</h5>
+                            <p class="card-text">{{person.bio}}</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            {% if person.role %}
+                            <li class="list-group-item"><b>{{person.role}}</b></li>
+                            {% endif %}
+                            {% if person.profession %}
+                            <li class="list-group-item"><b>{{person.profession}}</b></li>
+                            {% endif %}
+                        </ul>
+                        {% if person.email or person.github or person.linkedin or person.twitter %}
+                            <div class="card-body">
+                                <div class="row">
+                                    {% if person.email %}
+                                    <div class="col d-flex justify-content-center">
+                                        <a href="mailto:{{person.email}}" style="text-decoration:none;" target="_blank" rel="noopener noreferrer">
+                                            <i class="fa fa-envelope fa-lg"></i>
+                                        </a>
+                                    </div>
+                                    {% endif %}
+                                    {% if person.github %}
+                                    <div class="col d-flex justify-content-center">
+                                        <a href="https://github.com/{{person.github}}" style="text-decoration:none;" target="_blank" rel="noopener noreferrer">
+                                            <i class="fa fa-github fa-lg"></i>
+                                        </a>
+                                    </div>
+                                    {% endif %}
+                                    {% if person.linkedin %}
+                                    <div class="col d-flex justify-content-center">
+                                        <a href="https://linkedin.com/in/{{person.linkedin}}" style="text-decoration:none;" target="_blank" rel="noopener noreferrer">
+                                            <i class="fa fa-linkedin fa-lg"></i>
+                                        </a>
+                                    </div>
+                                    {% endif %}
+                                    {% if person.twitter %}
+                                    <div class="col d-flex justify-content-center">
+                                        <a href="https://twitter.com/{{person.twitter}}" style="text-decoration:none;" target="_blank" rel="noopener noreferrer">
+                                            <i class="fa fa-twitter fa-lg"></i>
+                                        </a>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <h1 class="display-6 gy-4">Former Team Members</h1>
+        <div class="row row-cols-auto gx-5 gy-2">
+            {% for person in site.data.people %}
+                {% if person.active == 0 %}
+                <div class="col-10 offset-1 col-lg-3 offset-lg-0 col-md-6 offset-md-0 col-sm-6 offset-sm-0 col-sm-offset-5 px-2 d-block">
+                    <div class="card border border-2 px-2 py-2 shadow p-3 mb-5">
+                        <div class="card-block">
+                            <h5 class="card-title">{{person.name}}</h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            {% if person.role %}
+                            <li class="list-group-item"><b>Role: </b>{{person.role}}</li>
+                            {% endif %}
+                            {% if person.profession %}
+                            <li class="list-group-item"><b>Profession: </b>{{person.profession}}</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

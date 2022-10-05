@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="container">
+    <div class="row">
+        <div class="col-9">
+            <!-- content from index.md -->
+            {{ content }}
+        </div>
+        <div class="col">
+            <!-- side column containing highlights -->
+            <div class="container-sm">
+                <p class="h4">Highlights</p>
+                <div class="list-group">
+                    {% for item in site.data.highlights %}
+                        <a href="{% if item.link %} {{item.link}} {% else %} # {% endif %}" class="list-group-item list-group-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">{{item.title}}</h5>
+                            </div>
+                            <p class="mb-1">{{item.content}}</p>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

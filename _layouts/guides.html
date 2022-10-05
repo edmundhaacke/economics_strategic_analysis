@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<div class="container">
+    <h1 class="h4">Guides</h1>
+    <div class="row gx-5 gy-3">
+        {% for guide in site.data.guides %}
+        <div class="col">
+            <div class="card flex-row flex-wrap border border-3 px-2 py-2 shadow p-3 mb-5">
+                {% if guide.img %}
+                <div class="card-header border-0">
+                    <img src="{{guide.img | relative_url}}" class="card-img img-fluid" style="height:5rem;">
+                </div>
+                {% endif %}
+                <div class="card-block px-2">
+                    <h5 class="card-title">{{guide.title}}</h5>
+                    <p class="card-text">{{guide.desc}}</p>
+                    <a href="{{guide.link | relative_url}}" class="card-link">Read more</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

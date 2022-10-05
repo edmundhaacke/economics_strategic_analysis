@@ -1,0 +1,44 @@
+- title: Drivers of ED Crowding
+  desc: >- 
+    This project investigate driver of the ED crowding. We use 
+    fixed effects model. add more words here about the project.
+    even more words about the project here.
+  github: nhsengland/ESA_ED_Crowding
+  img: assets/img/people/anon.jpg
+  status: Development
+  team: Edmund Haacke, Someone Else
+
+- title: Drivers of ED Crowding 2
+  desc: >- 
+    This project investigate driver of the ED crowding. We use 
+    fixed effects model. add more words here about the project.
+    even more words about the project here.
+  team: Edmund Haacke, Someone Else
+  github: nhsengland/ESA_ED_Crowding
+  img: assets/img/people/anon.jpg
+  status: Development
+
+- title: Drivers of ED Crowding 3
+  desc: >- 
+    This project investigate driver of the ED crowding. We use 
+    fixed effects model. add more words here about the project.
+    even more words about the project here.
+  github: nhsengland/ESA_ED_Crowding
+  img: assets/img/people/anon.jpg
+  status: Development
+  team: Edmund Haacke, Someone Else
+
+- title: Avoidable ED attendances
+  desc: >-
+    This is written in C++ and in R and derives avoidable ED
+    attendances as per the Univesristy of sheffield Scharr definitions
+  github: nhsengland/ESA_Avoidable_ED_Attendances
+  img: assets/img/people/anon.jpg
+  journal: https://emj.bmj.com/
+  status: Completed
+  team: Edmund Haacke
+
+- title: ICS productivity
+  desc: >-
+    this is another project
+  status: Scoping

@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+<div class="container">
+    <nav id="navbar-projects" class="navbar navbar-light">
+        <a class="navbar-brand" href="#">Projects</a>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="#scrollCompleted">Completed</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#scrollDevelopment">Development</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#scrollScoping">Scoping</a>
+            </li>
+        </ul>
+    </nav>
+    <div data-bs-spy="scroll" data-bs-target="#navbar-projects" data-bs-offset="0" class="scrollspy py-3" tabindex="0">
+        {% assign categories = "Completed, Development, Scoping" | split: ", " %}
+        {% for cat in categories %}
+        <h1 class="h5" id="scroll{{cat}}">{{cat}}</h1>
+            <div class="col" id="scroll{{cat}}">
+                <div class="row row-cols-auto gx-5 gy-3">
+                {% for proj in site.data.projects %}
+                    {% if proj.status == cat %}
+                    <div class="col-10 offset-1 col-lg-4 offset-lg-0 col-md-4 offset-md-0 col-sm-6 offset-sm-0 px-2 d-block">
+                        <div class="card border border-2 px-2 py-2 shadow p-3 mb-5">
+                            <div class="card-block">
+                                <h5 class="card-title">{{proj.title}}</h5>
+                                <p class="card-text">{{proj.desc}}</p>
+                                {% if proj.github %}
+                                    <a href="https://github.com/{{proj.github}}" class="card-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                {% endif %}
+                                {% if proj.journal %}
+                                    <a href="{{proj.journal}}" class="card-link" target="_blank" rel="noopener noreferrer">Journal</a>
+                                {% endif %}
+                            </div>
+                            <h5 class="py-2">Team members</h5>
+                            <div class="card-block">
+                                <div class="d-grid gap-2 col mx-auto">
+                                    {% assign projTeam = proj.team | split: ", " %}
+                                    {% for person in projTeam %}
+                                        {% assign personBio = "No bio found" %}
+                                        {% for p in site.data.people %}
+                                            {% if p.name == person %}
+                                                {% if p.active == 0 %}
+                                                    {% assign personBio = "This person has since left the team." %}
+                                                {% else %}
+                                                    {% assign personBio = p.bio %}
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endfor %}
+                                        <a tabindex="{{forloop.index}}" type="button" class="btn btn-secondary btn-sm" data-bs-trigger="focus" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" title="{{person}}" data-bs-content="{{personBio}}">
+                                            {{person}}
+                                        </a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

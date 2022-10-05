@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<div class="container">
+    <h1 class="h4">Posts</h1>
+    <div class="row row-cols-auto gx-5 gy-3">
+        {% for post in site.posts %}
+        <div class="col-10 col-md-4 px-2">
+            <div class="card border border-3 px-2 py-2 shadow p-3 mb-5">
+                <div class="card-block ">
+                    <h5 class="card-title">{{post.title}}</h5>
+                    <p class="card-text">{{post.excerpt}}</p>
+                    <a href="{{post.url}}" class="card-link">Read more</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
