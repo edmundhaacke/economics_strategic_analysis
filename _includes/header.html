@@ -2,7 +2,7 @@
     {%- assign default_paths = site.pages | map: "path"  -%}
     {%- assign page_paths = site.bootstrap.header_pages | default: default_paths -%}
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{{ '/' | relative_url }}">{{site.title | escape}}</a>
             {%- if titles_size > 0 -%}
@@ -25,10 +25,12 @@
         </div>
     </nav>
     {% if site.disclaimer %}
-    <div class="container" style="margin: 1em auto;">
-        <div class="alert alert-warning" role="alert">
-            <h4 class="alert-heading">Disclaimer</h4>
-            {{site.disclaimer}}
+    <div class="container">
+        <div class="container" style="margin: 1em auto;">
+            <div class="alert alert-warning" role="alert">
+                <h4 class="alert-heading">Disclaimer</h4>
+                {{site.disclaimer}}
+            </div>
         </div>
     </div>
     {% endif %}
