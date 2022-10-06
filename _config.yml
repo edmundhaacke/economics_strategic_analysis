@@ -25,13 +25,13 @@ description: >- # this means to ignore newlines until "baseurl:"
   of economists, data scientists, behavioural scientists, operational researchers, 
   statisticians and analysts. We operate like an in-house consultancy, working 
   on multiple and diverse projects across all areas of the NHS.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/economics_strategic_analysis" # the subpath of your site, e.g. /blog
+url: "https://edmundhaacke.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 disclaimer: >-
   This is not an official site but a store of technical documents and ongoing work.
   Opinions expressed in posts are not representative of the views of NHS England and any content here should not be regarded as official output in any form. 
   For more information about NHS England please visit our official website.
-twitter_username: jekyllrb
+twitter_username: nhsengland
 github_username:  nhsengland
 
 # Build settings
