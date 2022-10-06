@@ -1,8 +1,12 @@
 ---
-layout: page
+layout: post
+title: "Review policy for content"
+date: 2022-10-06
+categories: guides
+tags: content github website
 ---
 
-## Review policy for content
+This guide provides an overview of the guidelines that should be followed when uploading content to this website.
 
 - Only public GitHub repositories should be added as projects.
 - Project content should only be updated by related individuals.

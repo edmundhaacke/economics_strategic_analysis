@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/events/">Events</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{page.event_title}}</li>
+        </ol>
+    </nav>
+    <article class="post">
+        <header class="post-header py-3">
+            <h1 class="post-title">{{page.event_title | escape}}</h1>
+        </header>
+        <div class="post-content">
+            {{content}}
+        </div>
+    </article>
+</div>

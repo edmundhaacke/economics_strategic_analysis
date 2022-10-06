@@ -3,11 +3,30 @@ layout: default
 ---
 
 <div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/posts/">Posts & Guides</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{page.title}}</li>
+        </ol>
+    </nav>
     <article class="post">
         <header class="post-header py-3">
             <h1 class="post-title">{{page.title | escape}}</h1>
         </header>
+        <div class="row">
+            <div class="col">
+                {% for t in page.tags %}
+                    <span class="badge bg-primary">{{t}}</span>
+                {% endfor %}
+            </div>
+        </div>
         <div class="post-content">
+            <p>{{ site.time | date: '%B %d, %Y' }}</p>
+            
+            {% assign pageDate = page.date | date: "%Y-%m-%d" %}
+
+            
             {{ content }}
         </div>
     </article>

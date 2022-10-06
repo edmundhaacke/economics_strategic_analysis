@@ -3,18 +3,58 @@ layout: default
 ---
 
 <div class="container">
-    <h1 class="h4">Posts</h1>
-    <div class="row row-cols-auto gx-5 gy-3">
-        {% for post in site.posts %}
-        <div class="col-10 col-md-4 px-2">
-            <div class="card border border-3 px-2 py-2 shadow p-3 mb-5">
-                <div class="card-block ">
-                    <h5 class="card-title">{{post.title}}</h5>
-                    <p class="card-text">{{post.excerpt}}</p>
-                    <a href="{{post.url}}" class="card-link">Read more</a>
+    <nav id="navbar-posts" class="navbar navbar-light">
+        <a class="navbar-brand" href="#">Posts and Guides</a>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="#scrollPosts">Posts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#scrollGuides">Guides</a>
+            </li>
+        </ul>
+    </nav>
+    <div data-bs-spy="scroll" data-bs-target="#navbar-posts" data-bs-offset="0" class="scrollspy py-3" tabindex="0">
+        {% assign groups = "Posts, Guides" | split: ", " %}
+        
+        {% for grp in groups %}
+            <h1 class="h5" id="scroll{{grp}}">{{grp}}</h1>
+            <div class="col" id="scroll{{grp}}">
+                <div class="row row-cols-auto gx-5 gy-3">
+                    <!-- iterate through the posts -->
+                    {% for post in site.posts %}
+                        {% assign isCurrGrp = 0 %}
+                        <!-- loop through posts' categories -->
+                        {% for pCat in post.categories %}
+                            <!-- compare pCat to posts/guides all in uppercase -->
+                            {% assign tmpPCat = pCat | upcase %}
+                            {% assign tmpGrp = grp | upcase %}
+                            {% if tmpPCat == tmpGrp %}
+                                {% assign isCurrGrp = 1 %}
+                            {% endif %}
+                        {% endfor %}
+                        <!-- add card if is current group -->
+                        {% if isCurrGrp == 1 %}
+                            <div class="col-10 col-md-4 px-2">
+                                <div class="card border border-3 px-2 py-2 shadow p-3 mb-5">
+                                    <div class="card-block">
+                                        <h5 class="card-title">{{post.title}}</h5>
+                                        <p class="card-text">{{post.excerpt}}</p>
+                                        <div class="card-body">
+                                            <div class="col">
+                                                {% for t in post.tags %}
+                                                    <span class="badge bg-primary">{{t}}</span>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                        <a href="{{post.url | relative_url}}" class="card-link">Read more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </div>
-        </div>
         {% endfor %}
     </div>
 </div>

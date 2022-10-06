@@ -1,0 +1,45 @@
+- title: Award ceremony
+  category: award
+  date: 2022-01-01
+  short_desc: >-
+    The team was nominated for the award
+  img: assets/img/people/anon.jpg
+  link: content/events/2022-10-06-awesome-event.html
+  location: online
+  highlight: 1
+
+- title: Some future event
+  category: presentation
+  date: 2023-01-01
+  short_desc: >-
+    This is a future event
+  img: assets/img/people/anon.jpg
+  location: london
+  highlight: 1
+
+- title: Future event not highlighted
+  category: presentation
+  date: 2023-01-01
+  short_desc: >-
+    future presentation occuring
+  img: asset/img/people/anon.jpg
+  location: somewhere
+  highlight: 0
+
+- title: Future event also not highlighted
+  category: presentation
+  date: 2023-03-01
+  short_desc: >-
+    future presentation occuring at XYZ, something will be discussed
+  img: asset/img/people/anon.jpg
+  location: somewhere
+  highlight: 0
+
+- title: NHSR Conference
+  category: conference
+  date: 2022-11-15
+  short_desc: >-
+    Edmund & Anastasiia will be presenting at NHS-R conference.
+    This will be in Birmingham.
+  location: Birmingham
+  highlight: 0
