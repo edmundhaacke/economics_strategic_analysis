@@ -1,6 +1,6 @@
 ---
 layout: team
-title: Meet the Team
+title: People
 permalink: /meet_the_team/
 ---
 
