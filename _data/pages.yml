@@ -1,0 +1,5 @@
+pages:
+- title: About
+  url: content/about.markdown
+- title: Events
+  url: content/events.md

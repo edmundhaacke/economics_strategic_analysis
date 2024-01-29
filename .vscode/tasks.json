@@ -2,9 +2,15 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "css watch",
+            "type": "shell",
+            "command": "npx tailwindcss -i ./assets/css/main.css -o ./assets/dist-main.css --watch",
+            "problemMatcher": []
+        },
+        {
             "label": "w: serve website",
             "type": "shell",
-            "command": "npx tailwindcss -i ./assets/css/main.css -o ./assets/dist-main.css --watch && bundle exec jekyll serve --livereload",
+            "command": "bundle exec jekyll serve --baseurl '' --livereload",
             "problemMatcher": []
         },
         {

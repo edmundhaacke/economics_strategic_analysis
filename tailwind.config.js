@@ -3,7 +3,7 @@ module.exports = {
   content: [
     '_includes/**/*.html',
     '_layouts/**/*.html',
-    '*.md',
+    '*.markdown',
     "./node_modules/flowbite/**/*.js"
   ],
   theme: {

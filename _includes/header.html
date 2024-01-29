@@ -3,7 +3,7 @@
     {%- assign page_paths = site.bootstrap.header_pages | default: default_paths -%}
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
     <div class="relative z-0 pt-0 flex w-[90%] left-[5%] grid grid-flow-row auto-rows-max gap-y-14">
-        <nav class="bg-gray-900 relative w-full z-40 top-10 items-center start-0 border-bborder-gray-600 rounded-3xl">
+        <nav class="bg-gray-900 relative w-full z-40 top-5 items-center start-0 border-bborder-gray-600 rounded-3xl">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src="{{site.baseurl}}/assets/img/nhs_logo.jpg" class="h-8" alt="NHS Logo" />
@@ -16,7 +16,7 @@
                     </svg>
                 </button>
                 <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                    <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 bg-gray-800 md:bg-gray-900 border-gray-700">
+                    <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 bg-gray-900 md:bg-gray-900 border-gray-700">
                         {%- for path in page_paths -%}
                         {%- assign my_page = site.pages | where: "path", path | first -%}
                         {%- if my_page.title -%}
