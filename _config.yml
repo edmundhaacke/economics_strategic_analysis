@@ -18,11 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Economics & Strategic Analysis, NHS England
+title: Strategic Analysis
 email: econstrat.analysis@nhs.net
 description: >- # this means to ignore newlines until "baseurl:"
-  The Economics & Strategic Analysis at NHS England is a multidisciplinary team 
-  of economists, data scientists, behavioural scientists, operational researchers, 
+  The Strategic Analysis at NHS England is a multidisciplinary team 
+  of economists, behavioural scientists, operational researchers, 
   statisticians and analysts. We operate like an in-house consultancy, working 
   on multiple and diverse projects across all areas of the NHS.
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -33,12 +33,22 @@ disclaimer: >-
   For more information about NHS England please visit our official website.
 twitter_username: nhsengland
 github_username:  nhsengland
+home_tagline: "Strategic Analysis Team"
+home_tagdesc: >-
+  Robust and impactful evidence-based analysis, drawing on advanced analytical capabilities delivered through project-based and cross-cutting work. 
+  We use hypothesis-driven techniques to inform and shape solutions to complex, unstructured problems.
 
 # Build settings
 theme: minima
 
-sass:
-  sass_dir: _sass
+# sass:
+#   sass_dir: _sass
+
+plugins:
+  - jekyll-postcss
+
+postcss:
+  cache: false
 
 # Exclude from processing.
 # The following items will not be processed, by default.

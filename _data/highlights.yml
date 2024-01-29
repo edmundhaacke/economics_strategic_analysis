@@ -1,8 +1,14 @@
-- title: highlight0
+- title: Something really exciting the team has done
+  date: 2023-12-01
+  author: edmund
   content: this is come content for highlight 0
   img: assets/img/people/anon.jpg
+  img_alt: text description of image
 
-- title: highlight1
-  content: this is some content for highlight 0
-  img: assets/img/people/anon.jpg
+- title: Another exciting thing to highlight
+  date: 2024-12-01
+  author: edmund
+  content: this is some content for highlight 1
+  # img: assets/img/people/anon.jpg
+  img_alt: text description of image
   link: assets/img/people/anon.jpg
