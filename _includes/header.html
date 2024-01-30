@@ -1,11 +1,11 @@
-<header class="bg-transparent w-full justify-center mb-14">
+<header class="bg-white w-full justify-center sticky h-44 mb-16 md:mb-12 lg:mb-2">
     {%- assign default_paths = site.pages | map: "path"  -%}
     {%- assign page_paths = site.bootstrap.header_pages | default: default_paths -%}
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
-    <div class="relative z-0 pt-0 flex w-[95%] left-[2.5%] grid grid-flow-row auto-rows-max gap-y-14">
-        <nav class="bg-gray-900 relative w-full z-40 top-5 items-center start-0 border-bborder-gray-600 rounded-3xl">
+    <div class="fixed z-100 pt-5 flex w-[95%] left-[2.5%] grid grid-flow-row auto-rows-max gap-y-5">
+        <nav class="bg-gray-900 relative w-full z-0 top-0 items-center start-0 border-bborder-gray-600 rounded-3xl">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <a href="{{site.baseurl}}" class="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src="{{site.baseurl}}/assets/img/nhs_logo.jpg" class="h-8" alt="NHS Logo" />
                     <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">{{site.title}}</span>
                 </a>
